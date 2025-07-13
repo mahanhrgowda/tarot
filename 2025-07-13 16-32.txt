@@ -1,0 +1,30 @@
+Personalized Tarot Reading App
+About the Process
+This app generates a personalized tarot reading using your name, question (optional), and the current real time in the selected timezone. These details create a unique seed for the random number generator, combined with the current system time to mimic real-world unpredictability—like shuffling a physical deck at different moments. This ensures each reading is unique yet tied to your personal inputs. Cards are randomly selected and can appear upright or reversed, providing nuanced interpretations.
+
+Enter your name
+
+Mahaan
+Select timezone
+
+IST (Asia/Kolkata)
+Current time in IST (Asia/Kolkata): 2025-07-13 16:32
+
+Enter your question (optional)
+
+
+Your Three-Card Tarot Spread:
+Past: The Coffin ⚰️😔 (Reversed)
+Reversed Meaning: resistance to change, prolonged endings, delayed closure
+
+Reversed Description: The Coffin reversed represents resistance to change, prolonged endings, and delayed closure. It symbolizes difficulty in letting go and extended periods of grief. This card suggests a challenging time in accepting loss. It highlights the need to confront mourning head-on. The Coffin reversed encourages pushing through resistance to achieve transformation. ⚰️😔
+
+Present: The Letter ✉️📩 (Reversed)
+Reversed Meaning: bad news, lost messages, withheld information
+
+Reversed Description: The Letter reversed represents bad news, lost messages, and withheld information. It symbolizes disrupted or negative communication. This card suggests delays or unpleasant documents. It highlights the issues with miscommunication. The Letter reversed encourages careful wording and verifying information. ✉️📩
+
+Future: The Man 👨‍🦱🧔 (Reversed)
+Reversed Meaning: man who has fled, blind date, change of partner
+
+Reversed Description: The Man reversed represents a man who has fled, blind date, or change of partner. It symbolizes instability in male figures or masculine energy. This card suggests shifts or absences in significant men. It highlights transitions in relationships. The Man reversed encourages adapting to changes in masculine influences. 👨‍🦱🧔
