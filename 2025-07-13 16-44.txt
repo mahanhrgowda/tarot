@@ -1,0 +1,30 @@
+Personalized Tarot Reading App
+About the Process
+This app generates a personalized tarot reading using your name, question (optional), and the current real time in the selected timezone. These details create a unique seed for the random number generator, combined with the current system time to mimic real-world unpredictability—like shuffling a physical deck at different moments. This ensures each reading is unique yet tied to your personal inputs. Cards are randomly selected and can appear upright or reversed, providing nuanced interpretations.
+
+Enter your name
+
+Mahaan
+Select timezone
+
+IST (Asia/Kolkata)
+Current time in IST (Asia/Kolkata): 2025-07-13 16:44
+
+Enter your question (optional)
+
+
+Your Three-Card Tarot Spread:
+Past: The Bouquet 🌸🤝 (Reversed)
+Reversed Meaning: rejected offers, superficiality, poisoned gifts
+
+Reversed Description: The Bouquet reversed represents rejected offers, superficiality, and poisoned gifts. It symbolizes disharmonious interactions and false charm. This card suggests disappointing social experiences or insincere compliments. It highlights the pitfalls in shallow relationships. The Bouquet reversed encourages discerning true kindness and avoiding superficial ties. 🌸🤝
+
+Present: The Bear 🐻🛡️ (Reversed)
+Reversed Meaning: overbearing, loss of control, weakened position
+
+Reversed Description: The Bear reversed represents overbearing behavior, loss of control, and a weakened position. It symbolizes misused power or diminished authority. This card suggests challenges in leadership or protection. It highlights the dangers of excessive force. The Bear reversed encourages balancing strength and avoiding dominance. 🐻🛡️
+
+Future: The Anchor ⚓️🛡️ (Upright)
+Upright Meaning: stability, security, endurance, persistence, reliability, work
+
+Upright Description: The Anchor represents stability, security, endurance, persistence, reliability, and work. It symbolizes grounding and long-term security. This card suggests steadiness in career or relationships. It highlights dedication and reliability. The Anchor encourages perseverance and building lasting foundations. ⚓️🛡️
