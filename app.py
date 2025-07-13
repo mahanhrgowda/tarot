@@ -1,6 +1,6 @@
 import streamlit as st
 import random
-from datetime import date, time, datetime, timedelta
+from datetime import date, time, datetime, timedelta, timezone
 
 # List of 36 Lenormand cards with emojis, short meanings, lengthy descriptions, reversed meanings, and reversed descriptions
 # Reversed meanings based on various sources including https://en.tarotquest.fr/article-en-lenall-petit-lenormand-cards-meaning.html
@@ -305,7 +305,12 @@ This app generates a personalized tarot reading using your name, birth date, and
 
 name = st.text_input("Enter your name")
 birth_date = st.date_input("Enter your birth date")
-birth_time = st.time_input("Enter your birth time", step=timedelta(minutes=1))
+
+# Set default birth time to current IST time
+ist_tz = timezone(timedelta(hours=5, minutes=30))
+default_birth_time = datetime.now(ist_tz).time()
+birth_time = st.time_input("Enter your birth time", value=default_birth_time, step=timedelta(minutes=1))
+
 question = st.text_input("Enter your question (optional)")
 
 if st.button("Get Your Tarot Reading"):
