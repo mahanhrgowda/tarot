@@ -300,24 +300,39 @@ st.title("Personalized Tarot Reading App")
 
 st.markdown("""
 ### About the Process
-This app generates a personalized tarot reading using your name, birth date, and time. These details create a unique seed for the random number generator, combined with the current system time to mimic real-world unpredictability—like shuffling a physical deck at different moments. This ensures each reading is unique yet tied to your personal inputs. Cards are randomly selected and can appear upright or reversed, providing nuanced interpretations.
+This app generates a personalized tarot reading using your name, question (optional), and the current real time in the selected timezone. These details create a unique seed for the random number generator, combined with the current system time to mimic real-world unpredictability—like shuffling a physical deck at different moments. This ensures each reading is unique yet tied to your personal inputs. Cards are randomly selected and can appear upright or reversed, providing nuanced interpretations.
 """)
 
 name = st.text_input("Enter your name")
-birth_date = st.date_input("Enter your birth date")
 
-# Set default birth time to current IST time
-ist_tz = timezone(timedelta(hours=5, minutes=30))
-default_birth_time = datetime.now(ist_tz).time()
-birth_time = st.time_input("Enter your birth time", value=default_birth_time, step=timedelta(minutes=1))
+# Define timezones with offsets (without DST for simplicity)
+timezones = {
+    "IST (Asia/Kolkata)": timedelta(hours=5, minutes=30),
+    "UTC": timedelta(hours=0),
+    "EST (America/New_York)": timedelta(hours=-5),
+    "PST (America/Los_Angeles)": timedelta(hours=-8),
+    "CST (America/Chicago)": timedelta(hours=-6),
+    "BST (Europe/London)": timedelta(hours=1),
+    "JST (Asia/Tokyo)": timedelta(hours=9),
+    "AEST (Australia/Sydney)": timedelta(hours=10),
+}
+
+selected_tz_label = st.selectbox("Select timezone", list(timezones.keys()), index=0)
+offset = timezones[selected_tz_label]
+
+# Get current UTC time and adjust to selected timezone
+current_utc = datetime.now(timezone.utc)
+current_dt = current_utc + offset
+
+st.write(f"Current time in {selected_tz_label}: {current_dt.strftime('%Y-%m-%d %H:%M')}")
 
 question = st.text_input("Enter your question (optional)")
 
 if st.button("Get Your Tarot Reading"):
-    if name and birth_date and birth_time:
+    if name:
         # Create a seed based on inputs and current time for unpredictability
-        current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        seed_str = name + birth_date.strftime("%Y-%m-%d") + birth_time.strftime("%H:%M") + (question if question else "") + current_time
+        system_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        seed_str = name + current_dt.strftime("%Y-%m-%d") + current_dt.strftime("%H:%M") + (question if question else "") + system_time
         random.seed(hash(seed_str))
         
         # Draw 3 unique cards
@@ -341,4 +356,4 @@ if st.button("Get Your Tarot Reading"):
             st.write(f"**{orientation} Meaning:** {meaning}")
             st.write(f"**{orientation} Description:** {description}")
     else:
-        st.warning("Please fill in all fields to get your reading!")
+        st.warning("Please enter your name to get your reading!")
